@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="user-section">
+          <div class="user-info-image">
+            <img
+              src="https://i.pinimg.com/736x/92/bb/33/92bb338856d691791e96dd39c555fdd9.jpg"
+              alt="User"
+            />
+          </div>
+          <div class="user-info-text">
+            <div class="user-info-name">Elsa Farah Fauzia</div>
+            <div class="user-info-job">Backend Developer</div>
+          </div>
+        </div>
+        <div class="datetime" id="datetime"></div>
+      </div>
+      <h1>To-Do List</h1>
+
+      <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Enter task" required />
+        <input type="date" id="dateInput" />
+        <select id="priorityInput">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button onclick="addTask()">Add Task</button>
+      </div>
+
+      <div class="filter-section">
+        <input type="date" id="filterDate" onchange="filterTasks()" />
+        <button onclick="clearFilter()">Show All</button>
+        <button onclick="deleteSelectedTasks()">Delete Selected</button>
+        <button onclick="deleteAllTasks()">Delete All</button>
+      </div>
+
+      <div class="priority-counts">
+        <div class="priority-badge high-badge">
+          <span class="priority-icon">🔥</span>
+          <span class="priority-label">High</span>
+          <span class="priority-number" id="highCount">0</span>
+        </div>
+        <div class="priority-badge medium-badge">
+          <span class="priority-icon">⚡</span>
+          <span class="priority-label">Medium</span>
+          <span class="priority-number" id="mediumCount">0</span>
+        </div>
+        <div class="priority-badge low-badge">
+          <span class="priority-icon">🌱</span>
+          <span class="priority-label">Low</span>
+          <span class="priority-number" id="lowCount">0</span>
+        </div>
+      </div>
+
+      <div class="lists">
+        <div class="todo-section">
+          <h2>To-Do</h2>
+          <ul id="todoList"></ul>
+        </div>
+
+        <div class="done-section">
+          <h2>Done</h2>
+          <ul id="doneList"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
